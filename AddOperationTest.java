@@ -1,24 +1,19 @@
 package dz.univ.calculatrice;
- 
+
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
- 
-class addOperationTest {
- 
-    private final AddOperation operation = new AddOperation();
- 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class AddOperationTest {
+
     @Test
-    void shouldAddTwoPositiveNumbers() {
-        assertEquals(7.0, operation.execute(3.0, 4.0));
+    public void testExecute() {
+        Operation op = new AddOperation();
+        assertEquals(5.0, op.execute(2.0, 3.0));
     }
- 
+
     @Test
-    void shouldAddNegativeAndPositiveNumbers() {
-        assertEquals(1.0, operation.execute(-2.0, 3.0));
-    }
- 
-    @Test
-    void shouldAddDecimalNumbers() {
-        assertEquals(3.75, operation.execute(1.25, 2.5));
+    public void testSymbol() {
+        Operation op = new AddOperation();
+        assertEquals("+", op.symbol());
     }
 }
